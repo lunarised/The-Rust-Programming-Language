@@ -17,7 +17,7 @@ fn twelve_days_of_christmas() {
         "pipers piping",
         "drummers drumming",
     ];
-    for (i, x) in days.iter().enumerate() {
+    for (i, _x) in days.iter().enumerate() {
         println!(
             "On the {} day of christmas, my true love gave to me:",
             number_grammar(i + 1)
