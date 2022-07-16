@@ -34,6 +34,10 @@ fn twelve_days_of_christmas() {
         }
         println!("");
     }
+
+    println!("{}", fib(12));
+    println!("{}", fahrenheit_to_celcius(100));
+    println!("{}", celcius_to_fahrenheit(100));
 }
 
 fn number_grammar(n: usize) -> String {
@@ -45,4 +49,23 @@ fn number_grammar(n: usize) -> String {
         _ => "",
     };
     return format!("{}{}", n, suffix);
+}
+
+fn fib(n: i32) -> i32 {
+    let mut a = 0;
+    let mut b = 1;
+    let mut hold;
+    for _i in 0..n {
+        hold = a;
+        a = b;
+        b = hold + a;
+    }
+    return a;
+}
+
+fn fahrenheit_to_celcius(f: i32) -> i32 {
+    (f64::from(f - 32) * (5.0 / 9.0)) as i32
+}
+fn celcius_to_fahrenheit(c: i32) -> i32 {
+    (f64::from(c) * (9.0 / 5.0)) as i32 + 32
 }
